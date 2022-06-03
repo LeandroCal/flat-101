@@ -1,0 +1,56 @@
+@mixin flex(
+    $justify: flex-start,
+    $align: center,
+    $direction: row,
+    $wrap: wrap
+) {
+    @include display-flex();
+    @include flex-direction($direction);
+    @include justify-content($justify);
+    @include align-items($align);
+    @include flex-wrap($wrap);
+}
+
+@mixin display-flex() {
+    display: -webkit-flex;
+    display: -webkit-flexbox;
+    display: -moz-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+}
+
+@mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+    -moz-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+@mixin justify-content($justify) {
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+    justify-content: $justify;
+    -ms-flex-pack: $justify;
+}
+
+@mixin align-items($align) {
+    -webkit-align-items: $align;
+    -moz-align-items: $align;
+    -ms-align-items: $align;
+    align-items: $align;
+}
+
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}

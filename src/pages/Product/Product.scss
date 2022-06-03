@@ -1,0 +1,8 @@
+@use '../../scss' as *;
+
+.product {
+    &-title {
+        font-weight: $fw-500;
+        font-size: $fs-22;
+    }
+}

@@ -1,0 +1,13 @@
+@use '../../../scss/' as *;
+
+.search {
+    text-align: center;
+    &-items {
+        font-weight: $fw-300;
+        font-size: $fs-18;
+    }
+    &-title {
+        font-weight: $fw-600;
+        font-size: $fs-22;
+    }
+}

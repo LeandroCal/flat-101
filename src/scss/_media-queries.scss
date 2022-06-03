@@ -1,0 +1,76 @@
+/*
+      MEDIA QUERY MANAGER
+
+Breakpoint       Device ($breakpoint)
+-------------   | --------------
+0 - 450px       | Phone small (sm-phone)
+450px - 600px   | Phone (phone)
+600px - 750px   | Tablet portrait small (sm-tab-port)
+750px - 900px   | Tablet portrait (tab-port)
+900px - 1050px  | Tablet landscape small (sm-tab-land)
+1050px - 1200px | Tablet landscape (tab-land)
+[1200 - 1800]:  | Normal styles
+1800px - ∞:     | Big desktop (big-desktop)
+
+1em = 16px
+
+
+      USAGE
+
+  @include respond(tab-port){
+    ..styles..
+  }
+
+*/
+
+@mixin respond($breakpoint) {
+    // 450px
+    @if $breakpoint == sm-phone {
+        @media (max-width: 28.125em) {
+            @content;
+        }
+    }
+
+    // 600px
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) {
+            @content;
+        }
+    }
+
+    // 750px
+    @if $breakpoint == sm-tab-port {
+        @media (max-width: 46.875em) {
+            @content;
+        }
+    }
+
+    // 900px
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) {
+            @content;
+        }
+    }
+
+    // 1050px
+    @if $breakpoint == sm-tab-land {
+        @media (max-width: 65.625em) {
+            @content;
+        }
+    }
+
+    // 1200px
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) {
+            @content;
+        }
+    }
+
+    //Normal values: DESKTOP: 1200px - 1800px
+    // 1800px
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) {
+            @content;
+        }
+    }
+}

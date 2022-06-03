@@ -1,0 +1,58 @@
+@use '../../../scss' as *;
+
+.product-form {
+    &_field {
+        margin: 10px 0;
+        input,
+        textarea {
+            width: 100%;
+            padding: 5px;
+            border-radius: 3px;
+            min-height: 24px;
+        }
+        input,
+        textarea {
+            border: solid 1px $gray-dark;
+        }
+
+        input[type='file'] {
+            display: none;
+        }
+
+        textarea {
+            resize: vertical;
+            max-height: 200px;
+        }
+        .error {
+            border: solid 1px $status-error;
+        }
+
+        &-upload {
+            border: solid 1px $gray-dark;
+            border-radius: 3px;
+            font-size: $fs-14;
+            display: inline-block;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    }
+
+    &_submit {
+        @include flex(center, center);
+        button[type='submit'] {
+            color: $white;
+            border-style: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            cursor: pointer;
+            &.edit {
+                background: $status-warning;
+                border-color: $status-warning;
+            }
+            &.add {
+                background: $status-success;
+                border-color: $status-success;
+            }
+        }
+    }
+}

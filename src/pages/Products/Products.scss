@@ -1,0 +1,25 @@
+@use '../../scss' as *;
+
+.products {
+    &-new {
+        @include flex(center, center);
+        cursor: pointer;
+        z-index: 1;
+        padding: 10px;
+        background: $gray-light;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &-not-found {
+        text-align: center;
+        font-size: $fs-24;
+        font-weight: $fw-500;
+    }
+}

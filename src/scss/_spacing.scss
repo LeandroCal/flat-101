@@ -1,0 +1,26 @@
+$max: 50;
+$offset: 5;
+$unit: 'px'; // Feel free to change the unit.
+@mixin spacing-loop($className, $styleName) {
+    $i: 0;
+    @while $i <= $max {
+        #{$className + $i} {
+            #{$styleName}: #{$i + $unit};
+        }
+        $i: $i + $offset;
+    }
+}
+
+// Margins
+@include spacing-loop('.mt-', 'margin-top');
+@include spacing-loop('.mr-', 'margin-right');
+@include spacing-loop('.mb-', 'margin-bottom');
+@include spacing-loop('.ml-', 'margin-left');
+@include spacing-loop('.m-', 'margin');
+
+// Paddings
+@include spacing-loop('.pt-', 'padding-top');
+@include spacing-loop('.pr-', 'padding-right');
+@include spacing-loop('.pb-', 'padding-bottom');
+@include spacing-loop('.pl-', 'padding-left');
+@include spacing-loop('.p-', 'padding');

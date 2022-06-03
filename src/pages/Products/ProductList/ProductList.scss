@@ -1,0 +1,55 @@
+@use '../../../scss/' as *;
+
+.product-list {
+    @include flex(center, center, column);
+
+    &-image {
+        width: 100%;
+        position: relative;
+
+        img {
+            object-fit: cover;
+            height: 250px;
+            width: 100%;
+        }
+        &_fav {
+            cursor: pointer;
+            @include flex(center, center);
+            background-color: $white;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &-title {
+        font-size: $fs-16;
+        font-weight: $fw-500;
+        color: $secondary-color;
+    }
+
+    &-description {
+        font-size: $fs-14;
+        font-weight: $fw-300;
+    }
+
+    &-price {
+        font-size: $fs-14;
+        color: $gray-med;
+    }
+
+    &-actions {
+        @include flex(center, center);
+        svg {
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+        }
+    }
+}

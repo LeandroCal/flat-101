@@ -1,0 +1,27 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.modal {
+    text-align: center;
+
+    &-title {
+        font-weight: $fw-500;
+    }
+
+    &-actions {
+        font-size: $fs-14;
+        @include flex(center, center);
+
+        &_confirm {
+            cursor: pointer;
+            color: $white;
+            padding: 5px 10px;
+            background-color: $status-error;
+            border-radius: 5px;
+        }
+
+        &_cancel {
+            cursor: pointer;
+        }
+    }
+}

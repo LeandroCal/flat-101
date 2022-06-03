@@ -1,0 +1,7 @@
+@use '../../../../scss' as *;
+
+.required-field {
+    color: $status-error;
+    font-size: $fs-14;
+    font-weight: $fw-300;
+}

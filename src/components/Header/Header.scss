@@ -1,0 +1,18 @@
+@use '../../scss' as *;
+
+.header {
+    @include flex(space-between, center);
+    @include box-shadow($box-shadow);
+    padding: 10px 30px;
+
+    &-logo {
+        cursor: pointer;
+    }
+    &-icons {
+        cursor: pointer;
+        svg {
+            width: 36px;
+            height: 36px;
+        }
+    }
+}
